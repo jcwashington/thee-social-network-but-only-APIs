@@ -24,6 +24,7 @@
   "homepage": "https://github.com/jcwashington/thee-social-network-but-only-APIs#readme",
   "dependencies": {
     "express": "^4.17.3",
+    "moment": "^2.29.1",
     "mongoose": "^6.2.6"
   }
 }
