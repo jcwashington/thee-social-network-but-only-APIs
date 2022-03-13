@@ -4,14 +4,12 @@ module.exports = {
     // Get all users
     getAllUsers(req, res) {
         User.find({})
-        .select('-__v')
         .then(userData => res.json(userData))
         .catch((err) => res.status(500).json(err));
     },
     // Get user by '_id' with populated thought and friend data
     getUserById(req, res) {
         User.findOne({ _id: req.params.id })
-        .select('-__v')
         .then((userData) =>
         !userData
             ? res.status(404).json({ message: 'No user found with that ID'})
