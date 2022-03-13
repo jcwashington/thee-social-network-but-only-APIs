@@ -4,7 +4,7 @@
   [![License: ISC](https://img.shields.io/badge/license-ISC-green)](http://opensource.org/licenses/ISC)
 
   ## Description
-  Intended user story:
+  This project is an example of an API that could be used for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. An intended user story could be as follows:
 
     ```md
     AS A social media startup
@@ -13,12 +13,12 @@
     ```
 
   Technologies Utilized:
+  For this project we utilized [Express.js](https://www.npmjs.com/package/express) for the routing and [Mongoose](https://www.npmjs.com/package/mongoose) packages. [Moment.js](https://momentjs.com/) was used to better format our creation timestamps for readability purposes.
 
   ## Contents
 
   1. [Installation](#installation)
   2. [Project Usage](#usage)
-      1. [Visuals](#visuals)
   3. [Licenses](#licenses)
   4. [Testing](#testing)
   5. [How to contribute](#contributing)
@@ -35,13 +35,40 @@
   git@github.com:jcwashington/thee-social-network-but-only-APIs.git
   ```
 
+  Install the necessary dependencies with `npm i`
+  
+  Running `npm start` in a terminal will start the server and you can now use Postman, Insomnia or some other REST API testing tool to interact with the endpoints
 
 
   ## [Project Usage](#usage)
   
-  
-  ### [Visuals](#visuals)
-  
+  Here are the endpoints provided by this API
+
+  **User**
+  - Get all users:        `GET /api/users`
+  - Create a user:        `POST /api/users`
+  - Get user by ID:       `GET /api/users/:id`
+  - Update a user:        `PUT /api/users/:id`
+  - Delete a user:        `DELETE /api/users/:id`
+  - Add a friend:         `PUT /api/users/:id/friends/:friendId`
+    - NOTE: the user will also be added to their new friend's friend array
+  - Delete a friend:      `DELETE /api/users/:userId/friends/:friendId`
+    - NOTE: the user will also be removed from their friend's friend array
+
+  A video walkthrough of the /users endpoints can be found here: [Thee Social Network - User Routes](https://drive.google.com/file/d/1EStXAFUplI_FFadMWakOpa8thK2WipTW/view)
+
+  **Thoughts**
+  - Get all thoughts:     `GET /api/thoughts`
+  - Create a thought:     `POST /api/thoughts`
+  - Get thought by ID:    `GET /api/thoughts/:id`
+  - Update a thought:     `PUT /api/thoughts/:id`
+  - Delete a thought:     `DELETE /api/thoughts/:id`
+
+  **Reactions**
+  - Add a reaction to a thought:       `PUT /api/thoughts/:id/reactions`
+  - Delete a reaction:    `DELETE /api/thoughts/:id/reactions`
+
+  A video walkthrough of the /thoughts endpoints can be found here: [Thee Social Network - Thoughts Routes](https://drive.google.com/file/d/1a5w4kgyexGAGfTY0N4I6cyeCx46ix6rl/view)
 
   ## [Licenses](#licenses)
   This project uses the ISC license.
@@ -69,5 +96,5 @@
 
   ## [Have Questions?](#questions)
   Contact the author with your questions:
-    *GitHub Username: jcwashington
-    *GitHub Email: jasmine.washington412@gmail.com
+  - GitHub Username: jcwashington
+  - GitHub Email: jasmine.washington412@gmail.com
